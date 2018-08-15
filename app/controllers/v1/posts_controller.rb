@@ -2,6 +2,7 @@ class V1::PostsController < ApplicationController
   before_action :authenticate_user, except: [:index, :show]
 
   def index
+    p current_user
     posts = Post.all
     render json: posts.as_json
   end
